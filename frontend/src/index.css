@@ -26,13 +26,19 @@ main {
   flex: 1;
 }
 
+
+.rating span {
+  color: #ffc000;
+
+}
+
 .products {
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
 }
 
-.product {
+/* .product {
   border: 1px #404040 solid;
   margin: 1rem;
 }
@@ -44,4 +50,4 @@ main {
 
 .product-info {
   padding: 1rem;
-}
+} */
