@@ -26,10 +26,8 @@ main {
   flex: 1;
 }
 
-
 .rating span {
   color: #ffc000;
-
 }
 
 .products {
@@ -51,3 +49,7 @@ main {
 .product-info {
   padding: 1rem;
 } */
+
+.img-large{
+  max-width: 100%;
+}
