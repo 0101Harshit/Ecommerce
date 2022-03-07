@@ -53,3 +53,7 @@ main {
 .img-large{
   max-width: 100%;
 }
+
+.img-cart-thumbnail{
+  height:80px !important;
+}
