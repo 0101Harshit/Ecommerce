@@ -29,7 +29,8 @@ export default function CartScreen() {
   };
 
   const removeItemHandler = (item) => {
-    ctxDispatch({ type: "REMOVE_CART_ITEM", payload: item });
+    ctxDispatch({ type: "CART_REMOVE_ITEM", payload: item });
+
   };
 
   const checkoutHandler = () => {
@@ -38,7 +39,9 @@ export default function CartScreen() {
 
   return (
     <div>
-      <Helmet>Shopping Cart</Helmet>
+      <Helmet>
+        <title>Shopping Cart</title>
+      </Helmet>
       <h1>Shopping Cart</h1>
       <Row>
         <Col md={8}>
@@ -55,7 +58,7 @@ export default function CartScreen() {
                       <img
                         src={item.image}
                         alt={item.name}
-                        className="img-fluid rounded img-cart-thumbnail"
+                        className="img-fluid rounded image-thumbnail"
                       ></img>{" "}
                       <Link to={`/product/${item.slug}`}>{item.name}</Link>
                     </Col>

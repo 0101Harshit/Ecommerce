@@ -1,5 +1,6 @@
 export const getError = (error) => {
-  return error.response && error.response.data.msg
-    ? error.response.data.msg
-    : error.msg;
+  console.log(error.response);
+  return error.response && error.response.data.message
+    ? error.response.data.message
+    : error.message;
 };

@@ -62,7 +62,7 @@ function ProductScreen() {
       window.alert("Sorry,Product is out of stock");
       return;
     }
-   
+
     ctxDispatch({
       type: "CART_ADD_ITEM",
       payload: { ...product, quantity },
@@ -70,7 +70,6 @@ function ProductScreen() {
     navigate("/cart");
   };
 
- 
   return loading ? (
     <LoadingBox />
   ) : error ? (

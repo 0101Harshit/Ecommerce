@@ -50,10 +50,23 @@ main {
   padding: 1rem;
 } */
 
-.img-large{
+.img-large {
   max-width: 100%;
 }
 
-.img-cart-thumbnail{
-  height:80px !important;
+.image-thumbnail {
+  height: 80px !important;
+}
+
+.small-container {
+  max-width: 600px !important;
+}
+
+.checkout-steps > div {
+  border-bottom: 0.2rem solid #a0a0a0;
+  color: #a0a0a0;
+}
+.checkout-steps > div.active {
+  border-bottom: 0.2rem solid #f08000;
+  color: #f08000;
 }
