@@ -26,7 +26,7 @@ export default function SigninScreen() {
 
     try {
       const { data } = await Axios.post(
-        "http://localhost:5000/api/users/signin",
+        "/api/users/signin",
         {
           email,
           password,

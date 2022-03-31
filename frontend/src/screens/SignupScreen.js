@@ -32,7 +32,7 @@ export default function SignupScreen() {
     }
     try {
       const { data } = await Axios.post(
-        "http://localhost:5000/api/users/signup",
+        "/api/users/signup",
         {
           name,
           email,
