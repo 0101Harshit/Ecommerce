@@ -22,13 +22,13 @@ export default function SearchBox() {
                     type="text"
                     name='q'
                     id='q'
-                    onChange={(e) => { setQuery(e) }}
+                    onChange={(e) => { setQuery(e.target.value) }}
                     placeholder='search products'
                     aria-label='search-products'
                     aria-describedby='button-search'
                 >
                 </FormControl>
-                <Button variant='outline-primary' type="submit" id="button-search">
+                <Button variant='outline-warning' type="submit" id="button-search">
                     <i className='fas fa-search'></i>
                 </Button>
             </InputGroup>
