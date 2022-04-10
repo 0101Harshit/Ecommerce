@@ -6,7 +6,7 @@ import LoadingBox from '../components/LoadingBox'
 import MessageBox from '../components/MessageBox'
 import { getError } from '../utils'
 import axios from 'axios'
-import Button from 'react-bootstrap/esm/Button'
+import Button from 'react-bootstrap/Button'
 
 const reducer = (state, action) => {
     switch (action.type) {

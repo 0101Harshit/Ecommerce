@@ -1,7 +1,8 @@
-import Container from "react-bootstrap/esm/Container";
+import React from 'react';
+import Container from "react-bootstrap/Container";
 import { Helmet } from "react-helmet-async";
-import Form from "react-bootstrap/esm/Form";
-import Button from "react-bootstrap/esm/Button";
+import Form from "react-bootstrap/Form";
+import Button from "react-bootstrap/Button";
 import { Link, useNavigate } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 import { useContext, useEffect, useState } from "react";
