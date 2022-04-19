@@ -52,6 +52,7 @@ function App() {
   const [categories, setCategories] = useState([]);
 
   useEffect(() => {
+    document.body.style.zoom='75%'
     const fetchCategories = async () => {
       try {
         const { data } = await axios.get(`/api/products/categories`);
