@@ -117,13 +117,6 @@ function App() {
                       >
                         Sign Out
                       </Link>
-                      <Link
-                        className="dropdown-item"
-                        to="/admin/dashboard"
-                        
-                      >
-                        Dashboard
-                      </Link>
                     </NavDropdown>
                   ) : (
                     <Link className="nav-link" to="/signin">

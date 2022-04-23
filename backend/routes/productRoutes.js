@@ -133,7 +133,7 @@ productRouter.get('/search', expressAsyncHandler(async (req, res) => {
     }
   } : {};
 
-  const categoryFilter = category && category !== 'all' ? { category } : {};
+  const categoryFilter = category && category !== 'all' ? { brand:category } : {};
 
   const ratingFilter = rating && rating !== 'all' ? {
     rating: {
@@ -188,7 +188,7 @@ productRouter.get('/search', expressAsyncHandler(async (req, res) => {
 productRouter.get(
   '/categories',
   expressAsyncHandler(async (req, res) => {
-    const categories = await Product.find().distinct('category');
+    const categories = await Product.find().distinct('brand');
     res.send(categories);
   })
 );

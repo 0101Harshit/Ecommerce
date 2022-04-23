@@ -82,7 +82,7 @@ export default function DashboardScreen() {
                 <Col md={4}>
                   <Card>
                     <Card.Body>
-                      <Card.Title>${summary.orders && summary.orders[0] ? summary.orders[0].totalSales.toFixed(2) : 0}</Card.Title>
+                      <Card.Title>₹{summary.orders && summary.orders[0] ? summary.orders[0].totalSales.toFixed(2) : 0}</Card.Title>
                       <Card.Text> Orders</Card.Text>
                     </Card.Body>
                   </Card>

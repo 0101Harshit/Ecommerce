@@ -65,7 +65,7 @@ orderRouter.get('/summary',
 
     const productCategories = await Product.aggregate([{ 
       $group:{
-        _id:'$category', 
+        _id:'$brand', 
         count:{$sum:1}
       }
     }])
