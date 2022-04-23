@@ -18,9 +18,9 @@ header a {
   font-weight: bold;
 } */
 
-body a{
-  text-decoration:none;
-  color:#100901
+body a {
+  text-decoration: none;
+  color: #100901;
 }
 
 .site-container {
@@ -58,6 +58,7 @@ main {
 .img-large {
   max-width: 100%;
 }
+
 
 .image-thumbnail {
   height: 80px !important;

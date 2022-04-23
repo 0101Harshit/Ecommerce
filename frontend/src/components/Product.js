@@ -39,7 +39,7 @@ function Product(props) {
         </Link>
         <Rating rating={product.rating} numReviews={product.numReviews} />
         <Card.Text>
-          <strong>${product.price}</strong>
+          <strong>₹{product.price}</strong>
         </Card.Text>
         {product.countInStock === 0 ? (
           <Button variant="danger" disabled>

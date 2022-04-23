@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, useNavigate } from "react-router-dom";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import HomeScreen from "./screens/HomeScreen";
@@ -36,7 +36,9 @@ import UserListScreen from "./screens/UserListScreen";
 import UserEditScreen from "./screens/UserEditScreen";
 
 toast.configure();
+
 function App() {
+  
   const { state, dispatch: ctxDispatch } = useContext(Store);
   const { cart, userInfo } = state;
 
@@ -45,14 +47,14 @@ function App() {
     localStorage.removeItem("userInfo");
     localStorage.removeItem("shippingAddress");
     localStorage.removeItem("paymentMethod");
-    window.location.href = '/'
+    
   };
 
   const [sidebarIsOpen, setSidebarIsOpen] = useState(false);
   const [categories, setCategories] = useState([]);
 
   useEffect(() => {
-    document.body.style.zoom='75%'
+    document.body.style.zoom='80%'
     const fetchCategories = async () => {
       try {
         const { data } = await axios.get(`/api/products/categories`);
@@ -85,7 +87,7 @@ function App() {
               </Button>
 
               <LinkContainer to="/">
-                <Navbar.Brand>Ecommerce</Navbar.Brand>
+                <Navbar.Brand>Sellphone</Navbar.Brand>
               </LinkContainer>
               <Navbar.Toggle aria-controls="basic-navbar-nav" />
               <Navbar.Collapse id="basic-navbar-nav">
@@ -110,10 +112,17 @@ function App() {
                       <NavDropdown.Divider />
                       <Link
                         className="dropdown-item"
-                        to="#signout"
+                        to="/"
                         onClick={signoutHandler}
                       >
                         Sign Out
+                      </Link>
+                      <Link
+                        className="dropdown-item"
+                        to="/admin/dashboard"
+                        
+                      >
+                        Dashboard
                       </Link>
                     </NavDropdown>
                   ) : (
