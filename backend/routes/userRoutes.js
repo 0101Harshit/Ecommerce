@@ -30,6 +30,30 @@ userRouter.get(
   })
 );
 
+userRouter.put('/profile', isAuth, expressAsyncHandler(async (req, res) => {
+  User.findById(req.user._id, async(err, user) => {
+    if (user) {
+      console.log(user)
+      user.name = req.body.name || user.name
+      user.email = req.body.email || user.email
+      if (req.body.password) {
+        user.password = bcrypt.hashSync(req.body.password, 10)
+      }
+      const updatedUser = await user.save();
+      console.log(updatedUser)
+      res.send({
+        _id: updatedUser._id,
+        name: updatedUser.name,
+        email: updatedUser.email,
+        isAdmin: updatedUser.isAdmin,
+        token: generateToken(updatedUser)
+      })
+    } else if (err) {
+      res.status(404).send({ message: "User not found" })
+    }
+  });
+}))
+
 userRouter.put(
   '/:id',
   isAuth,
@@ -71,7 +95,7 @@ userRouter.post(
   expressAsyncHandler(async (req, res) => {
     const newUser = new User({
       name: req.body.name,
-      email: req.body.name,
+      email: req.body.email,
       password: bcrypt.hashSync(req.body.password, 10),
     });
     const user = await newUser.save();
@@ -105,28 +129,6 @@ userRouter.post(
   })
 );
 
-userRouter.put('/profile', isAuth, expressAsyncHandler(async (req, res) => {
-  User.findById(req.user._id, async(err, user) => {
-    if (user) {
-      console.log(user)
-      user.name = req.body.name || user.name
-      user.email = req.body.email || user.email
-      if (req.body.password) {
-        user.password = bcrypt.hashSync(req.body.password, 10)
-      }
-      const updatedUser = await user.save();
-      console.log(updatedUser)
-      res.send({
-        _id: updatedUser._id,
-        name: updatedUser.name,
-        email: updatedUser.email,
-        isAdmin: updatedUser.isAdmin,
-        token: generateToken(updatedUser)
-      })
-    } else if (err) {
-      res.status(404).send({ message: "User not found" })
-    }
-  });
-}))
+
 
 export default userRouter;

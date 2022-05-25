@@ -37,17 +37,18 @@ export default function ProfileScreen() {
 
     const submitHandler = async (e) => {
         e.preventDefault();
+        
         dispatch({ type: 'UPDATE_REQUEST' })
         try {
             const { data } = await axios.put('api/users/profile',
                 {
                     name,
                     email,
-                    password
+                    password,
                 },
                 {
-                    headers: { authorization: `Bearer ${userInfo.token}` }
-                })
+                    headers: { authorization: `Bearer ${userInfo.token}` },
+                  })
             dispatch({ type: 'UPDATE_SUCCESS' })
             console.log("data:", data)
 

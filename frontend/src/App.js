@@ -64,7 +64,7 @@ function App() {
       }
     };
     fetchCategories();
-  }, []);
+  }, [sidebarIsOpen]);
 
   return (
     <BrowserRouter>

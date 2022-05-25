@@ -45,7 +45,7 @@ const prices = [
     value: '10000-20000'
   },
   {
-    name: '₹20000 to $30000',
+    name: '₹20000 to ₹30000',
     value: '20000-30000'
   },
 ]
@@ -135,7 +135,7 @@ export default function SearchScreen() {
       </Helmet>
       <Row>
         <Col md={3}>
-          <h3>Brand</h3>
+          <h3>Departments</h3>
           <div>
             <ul>
               <li>
