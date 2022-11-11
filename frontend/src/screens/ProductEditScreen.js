@@ -57,8 +57,7 @@ export default function ProductEditScreen() {
         { loading,
             error,
             loadingUpdate,
-            loadingUpload,
-            errorUpload
+            loadingUpload
         },
         dispatch
     ] = useReducer(reducer, {
