@@ -27,7 +27,7 @@ function HomeScreen() {
     error: "",
     products: [],
   });
-  
+
   useEffect(() => {
     const fetchProducts = async () => {
       dispatch({ type: "FETCH_REQUEST" });

@@ -5,7 +5,6 @@ import User from "../models/userModel.js";
 import { generateToken, isAdmin, isAuth } from "../utils.js";
 
 const userRouter = express.Router();
-
 userRouter.get(
   '/',
   isAuth,
@@ -31,7 +30,7 @@ userRouter.get(
 );
 
 userRouter.put('/profile', isAuth, expressAsyncHandler(async (req, res) => {
-  User.findById(req.user._id, async(err, user) => {
+  User.findById(req.user._id, async (err, user) => {
     if (user) {
       console.log(user)
       user.name = req.body.name || user.name

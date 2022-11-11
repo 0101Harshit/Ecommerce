@@ -35,10 +35,9 @@ import OrderListScreen from "./screens/OrderListScreen";
 import UserListScreen from "./screens/UserListScreen";
 import UserEditScreen from "./screens/UserEditScreen";
 
-toast.configure();
 
 function App() {
-  
+
   const { state, dispatch: ctxDispatch } = useContext(Store);
   const { cart, userInfo } = state;
 
@@ -47,14 +46,14 @@ function App() {
     localStorage.removeItem("userInfo");
     localStorage.removeItem("shippingAddress");
     localStorage.removeItem("paymentMethod");
-    
+
   };
 
   const [sidebarIsOpen, setSidebarIsOpen] = useState(false);
   const [categories, setCategories] = useState([]);
 
   useEffect(() => {
-    document.body.style.zoom='80%'
+    document.body.style.zoom = '80%'
     const fetchCategories = async () => {
       try {
         const { data } = await axios.get(`/api/products/categories`);
